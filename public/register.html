@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>تدريب مدينة الملك  فهد الطبية</title>
+</head>
+
+   <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+       body {
+           background-image: url(https://www.rc2.med.sa/ar/PublishingImages/keyMessages/new/%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%AA%D8%AC%D9%85%D8%B9%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%20%D8%A7%D9%84%D8%B5%D8%AD%D9%8A%20%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A%20%D8%A7%D9%84%D8%B5%D8%AD%D9%81%D8%A9%20%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9-051.png);
+           background-size: cover;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           overflow: hidden;
+           margin: 0;
+           padding: 0;
+           height: 100%;
+           overflow-y: auto;
+           font-family: "DINNextLArabic",sans-serif;
+       }
+
+       .wrapper {
+           display: flex;
+           flex:100%;
+           justify-content: center;
+           align-items: center;
+           min-height: 110vh;
+           background: rgba(39, 39, 39, 0.4);
+           height:900px;
+       }
+
+       .nav {
+           position: fixed;
+           top: 0;
+           display: flex;
+           justify-content:flex-end;
+           width: 100%;
+           height: 100px;
+           line-height: 100px;
+           background: linear-gradient(rgba(39,39,39, 0.6), transparent);
+           z-index: 100;
+       }
+
+       .nav-logo img {
+           width: 150px;
+           position: absolute;
+           top: 20px;
+           left: 20px;
+       }
+            
+
+    .link:hover, .active {
+        border-bottom: 2px solid #fff;
+    }
+
+       .nav-button .btn {
+           width: 130px;
+           height: 40px;
+           font-weight: 500;
+           background: rgba(255, 255, 255, 0.4);
+           border: none;
+           border-radius: 30px;
+           cursor: pointer;
+           transition: .3s ease;
+           
+       }
+
+    .btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    #registerBtn {
+        margin-left: 15px;
+    }
+
+       .btn.white-btn {
+           background: rgba(255, 255, 255, 0.7);
+           
+       }
+
+    .btn.btn.white-btn:hover {
+        background: rgba(255, 255, 255, 0.5);
+    }
+
+
+       .form-box {
+           position: relative;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           width: 720px;
+           height:800px;
+           overflow: hidden;
+           z-index: 2;
+           padding-top: 45px;
+       }
+
+    .register1-container {
+        position: absolute;
+        left: 4px;
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        transition: .5s ease-in-out;
+    }
+
+       .register2-container {
+           position:absolute;
+           right: -600px;
+           width: 600px;
+           display: flex;
+           flex-direction: column;
+           transition: .5s ease-in-out;
+       }
+
+    .top span {
+        color: #fff;
+        font-size: small;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+        .top span a {
+            font-weight: 500;
+            color: #fff;
+            margin-left: 5px;
+        }
+
+    header {
+        color: #fff;
+        font-size: 30px;
+        text-align: center;
+        padding: 10px 0 30px 0;
+    }
+
+       .two-forms {
+           display: flex;
+           gap: 50px;
+          
+
+       }
+       select#gender {
+           box-sizing: border-box;
+           font-size: 15px;
+           background-color: rgba(255, 255, 255, 0.7);
+           margin: 0;
+           padding: 10px;
+           border-radius: 30px;
+       }
+       select#MainContent_ddlinstitution {
+           box-sizing: border-box;
+           font-size: 15px;
+           background-color: rgba(255, 255, 255, 0.7);
+           margin:0;
+           padding:10px;
+           border-radius:30px;
+       }
+
+       .input-field {
+           margin:5px;
+           font-size: 15px;
+           box-sizing: border-box;
+           background: rgba(255, 255, 255, 0.2);
+           color: #fff;
+           height: 50px;
+           width: 100%;
+           padding: 0 50px 0 45px;
+           border: none;
+           border-radius: 30px;
+           outline: none;
+           transition: .2s ease;
+       }
+
+        .input-field:hover, .input-field:focus {
+            background: rgba(255, 255, 255, 0.25);
+            
+        }
+
+    ::-webkit-input-placeholder {
+        color: #fff;
+    }
+
+       .input-box i {
+           position: relative;
+           top: -35px;
+           left: 17px;
+           color: #fff;
+       }
+
+    .submit {
+        font-size: 15px;
+        font-weight: 500;
+        color: black;
+        height: 45px;
+        width: 100%;
+        border: none;
+        border-radius: 30px;
+        outline: none;
+        background: rgba(255, 255, 255, 0.7);
+        cursor: pointer;
+        transition: .3s ease-in-out;
+    }
+
+        .submit:hover {
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+        }
+
+    .two-col {
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        font-size: small;
+        margin-top: 10px;
+    }
+
+       .two-col .one {
+           display: flex;
+           gap: 5px;
+       }
+
+       .two label a {
+           text-decoration: none;
+           color: #fff;
+       }
+
+           .two label a:hover {
+               text-decoration: underline;
+           }
+      
+
+    @media only screen and (max-width: 786px) {
+        .nav-button {
+            display: none;
+            
+        }
+
+            }
+
+
+    @media only screen and (max-width: 540px) {
+        .wrapper {
+            min-height: 140vh;
+        }
+
+       .form-box {
+           width: 100%;
+           height: 500px;
+       }
+
+        .register1-container, .register2-container {
+            width: 100%;
+            padding: 0 20px;
+        }
+      
+
+
+
+            .register1-container , .register2-container.two-forms {
+                flex-direction: column;
+                gap: 0;
+            }
+       
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+            <img src="https://static.wixstatic.com/media/3c9e55_ee23c9e8dca645e8ae1e0e3371b95387~mv2.png" alt="Logo">
+            </div>
+            <div class="nav-button">
+                <button class="btn white-btn" id="register1Btn" onclick="register1()">السابق</button>
+                <button class="btn" id="register2Btn" onclick="register2()">التالي</button>
+            </div>
+        </nav>
+
+        <!----------------------------- Form box ----------------------------------->
+        <div class="form-box">
+
+            <!------------------- register1 form -------------------------->
+
+            <div class="register1-container" id="register1">
+                <div class="top">
+
+                    <header>تسجيل متدرب جديد</header>
+                </div>
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="رقم بطاقة الاحوال">
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="رقمك الجامعي">
+                        <br>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="الاسم الرباعي باللغه العربيه">
+                    <i class="bx bx-user"></i> <br>
+                </div>
+
+                <div class="input-box">
+                    <input type="email" class="input-field" placeholder="ايميل المتدرب">
+                    <i class="bx bx-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="05 رقم الجوال">
+                    <br>
+                </div>
+                <label style="margin-bottom:20px; font-size:20px; color:#fff; text-align:right;"> : الجنس </label>
+
+                <select id="gender" name="gender" tabindex="20">
+                    <option selected="selected" value="0">اختر واحد</option>
+                    <option value="ذكر">ذكر</option>
+                    <option value="أنثى">أنثى</option>
+                </select>
+                <br><br>
+                <label style="margin-bottom:20px; font-size:20px; color:#fff; text-align:right;"> : الجامعة </label>
+
+                <select id="MainContent_ddlinstitution" name="ctl00$MainContent$ddlinstitution" tabindex="25">
+                    <option selected="selected" value="0">اختر من القائمة</option>
+                    <option value="2">جامعة الأميرة نورة بنت عبدالرحمن</option>
+                    <option value="3">جامعة الإمام محمد بن سعود</option>
+                    <option value="4">جامعة ينبع</option>
+                    <option value="5">جامعة الأمير سلطان</option>
+                    <option value="6">جامعة شقراء</option>
+                    <option value="9">جامعة الملك سعود</option>
+                    <option value="10">جامعة الأمير سطام بن عبدالعزيز</option>
+                    <option value="11">الكلية التقنية الدولية للبنات بالخرج/لوريت</option>
+                    <option value="12">الجامعة السعودية الإلكترونية</option>
+                    <option value="21">كلية الاتصالات والمعلومات</option>
+                    <option value="24">الترجمة الإنجليزية</option>
+                    <option value="28">المدرسة الثانوية الأمريكية</option>
+                    <option value="31">الولايات المتحدة الأمريكية</option>
+                    <option value="33">أخرى</option>
+                    <option value="34">الجامعة العربية المفتوحة</option>
+                    <option value="37">جامعة المجمعة</option>
+                    <option value="38">خاصة</option>
+                    <option value="39">جامعة الملك فهد للبترول والمعادن</option>
+                    <option value="40">جامعة حفر الباطن</option>
+                    <option value="41">كلية</option>
+                    <option value="42">جامعة حائل</option>
+                    <option value="43">جامعة جدة</option>
+                    <option value="44">جامعة طيبة</option>
+                    <option value="45">جامعة الإمام عبدالرحمن بن فيصل</option>
+                    <option value="46">جامعة القصيم</option>
+                    <option value="47">جامعة الملك خالد</option>
+                    <option value="48">جامعة فهد بن سلطان - تبوك</option>
+                    <option value="49">جامعة جازان</option>
+                    <option value="50">جامعة الطائف</option>
+                    <option value="51">جامعة الملك فيصل</option>
+                    <option value="52">جامعة أم القرى</option>
+                    <option value="53">جامعة الجوف</option>
+                    <option value="54">جامعة المعرفة</option>
+                    <option value="55">جامعة الفيصل</option>
+                    <option value="56">جامعة بيشة</option>
+                    <option value="57">جامعة البحرين</option>
+                    <option value="58">جامعة الباحة</option>
+                    <option value="59">جامعة شرق لندن</option>
+                    <option value="60">الكليات التقنية الدولية</option>
+                    <option value="61">الكلية التقنية الدولية للبنات بجدة</option>
+                    <option value="62">الهيئة الملكية للجبيل وينبع</option>
+                    <option value="64">الكلية الرقمية التقنية - الأحساء</option>
+                    <option value="65">جامعة الحدود الشمالية</option>
+                    <option value="67">معهد الإدارة العامة</option>
+                    <option value="68">الكلية الرقمية التقنية - الرياض</option>
+                    <option value="69">كلية الشرق العربي</option>
+                    <option value="70">معهد ماز</option>
+                    <option value="72">كلية التقنية - بلقرن</option>
+                    <option value="73">مدينة الملك فهد الطبية</option>
+                    <option value="75">جامعة المستقبل</option>
+                    <option value="76">جامعة ميدأوشن</option>
+                    <option value="77">معهد ريتال الدولي</option>
+                    <option value="79">جامعة الأمير سطام بن عبدالعزيز - حوطة بني تميم</option>
+                    <option value="80">جامعة الأمير سطام بن عبدالعزيز - الدلم</option>
+                    <option value="81">جامعة الأمير سطام بن عبدالعزيز - السليل</option>
+                    <option value="82">جامعة الأمير سطام بن عبدالعزيز - الأفلاج</option>
+                    <option value="83">جامعة الأمير سطام بن عبدالعزيز - وادي الدواسر</option>
+                    <option value="84">أكاديمية الفيصل الدولية</option>
+                </select>
+
+            </div>
+
+            <!------------------- register2 form -------------------------->
+            <div class="register2-container" id="register2">
+                <div class="top">
+                    <br>
+                    <br>
+                    <header>تسجيل متدرب جديد</header>
+                </div>
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="اسمك باللغه الانجليزية">
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="اسم الاب باللغه الانجليزية">
+                        <i class="bx bx-user"></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="اسم العائلة باللغه الانجليزية">
+                    <i class="bx bx-user"></i>
+                </div>
+
+                <h2 style="/*! font-size: ; */margin-bottom: 20px; font-size:20px; color:#fff; text-align:right;"> : بيانات المشرف </h2>
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="اسم المشرف الجامعي">
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" class="input-field" placeholder="ايميل المشرف الجامعي">
+                        <i class="bx bx-envelope"></i>
+                    </div>
+                </div>
+
+                <h2 style="/*! font-size: ; */margin-bottom: 20px; font-size:20px; color:#fff; text-align:right;"> : فترة التدريب </h2>
+
+                <label style="margin-bottom:20px; font-size:18px; color:#fff; text-align:right;">بداية التدريب </label>
+                <input style="font-size: 15px; box-sizing: border-box; background-color: rgba(255, 255, 255, 0.7); padding: 7px; border-radius: 20px;" type="date" placeholder="بداية التدريب" required>
+                <br>
+                <label style="margin-bottom:20px; font-size:18px; color:#fff; text-align:right;">نهاية التدريب</label>
+                <input style="font-size: 15px; box-sizing: border-box; background-color: rgba(255, 255, 255, 0.7); padding: 7px; border-radius: 20px;" type="date" placeholder="نهاية التدريب" required>
+                <br>
+
+
+                <label style="margin-bottom:20px; font-size:18px; color:#fff; text-align:right;" for="pdfFile"> : المرفقات  </label>
+                <input type="file" id="pdfFile" name="pdfFile" accept=".pdf" required>
+                <br>
+                <br>
+
+                <div class="input-box">
+                    <input type="submit" class="submit" value="ارسال">
+                </div>
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="register-check">
+                        <label style="font-size:16px;" for="register-check">تذكرني</label>
+                    </div>
+                    <div class="two">
+                        <label style="font-size:16px;"><a href="#"> Back to login </a></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        var a = document.getElementById("register1Btn");
+        var b = document.getElementById("register2Btn");
+        var x = document.getElementById("register1");
+        var y = document.getElementById("register2");
+
+        function register1() {
+            x.style.left = "4px";
+            y.style.right = "-520px";
+            a.className += " white-btn";
+            b.className = "btn";
+            x.style.opacity = 1;
+            y.style.opacity = 0;
+        }
+
+        function register2() {
+            x.style.left = "-610px";
+            y.style.right = "5px";
+            a.className = "btn";
+            b.className += " white-btn";
+            x.style.opacity = 0;
+            y.style.opacity = 1;
+        }
+
+    </script>
+
+</body>
+</html>

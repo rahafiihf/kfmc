@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px; 
+  background-color: #f8f9fa; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.login-btn {
+  padding: 10px 20px;
+  background-color: #007bff; 
+  color: white;
+  border: none; 
+  border-radius: 5px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+}
+
+.login-btn:hover {
+  background-color: #0056b3; 
+}
+
+.header-buttons {
+  display: flex; 
+}
+
+.language-btn,
+.languageA-btn {
+  margin-left: 10px; 
+  padding: 5px 12px; 
+  background-color: transparent; 
+  border: 1px solid #007bff; 
+  color: #007bff; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s, color 0.3s; 
+}
+
+.language-btn:hover,
+.languageA-btn:hover {
+  background-color: #007bff; 
+  color: white; 
+}

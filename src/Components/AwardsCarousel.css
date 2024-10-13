@@ -1,0 +1,66 @@
+.awards-carousel {
+  width: 90%; 
+  margin: 0 auto; 
+  padding: 30px 20px;
+  background-color: #f0f4f8; 
+  border-radius: 15px; 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
+}
+
+.awards-carousel h2 {
+  text-align: center;
+  font-family: 'Cairo', sans-serif; 
+  font-size: 28px; 
+  color: #333;
+  margin-bottom: 30px; 
+  font-weight: bold; 
+  letter-spacing: 1px; 
+}
+
+.awards-carousel img {
+  width: 40% !important; 
+  height: 150px; 
+  object-fit: contain; 
+  border-radius: 10px; 
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+  margin: 0 auto; 
+}
+
+.awards-carousel img:hover {
+  transform: scale(1.08); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.awards-carousel .slick-prev, 
+.awards-carousel .slick-next {
+  background-color: transparent; 
+  color: #40e0d086; 
+  border: none; 
+  width: 50px; 
+  height: 50px; 
+  box-shadow: none; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  transition: color 0.3s ease; 
+}
+
+.awards-carousel .slick-prev:hover, 
+.awards-carousel .slick-next:hover {
+  background-color: transparent; 
+  color: #2ec4b6; 
+}
+
+.awards-carousel .slick-prev:before, 
+.awards-carousel .slick-next:before {
+  font-size: 24px; 
+  color: inherit; 
+}
+
+.awards-carousel .slick-prev:before {
+  content: '←'; 
+}
+
+.awards-carousel .slick-next:before {
+  content: '→'; 
+}
