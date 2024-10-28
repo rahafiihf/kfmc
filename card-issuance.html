@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="card-issuance.css">
+    <title>إصدار البطاقة</title>
+</head>
+<body>
+    <div id="id-card">
+        <h1>إصدار البطاقة</h1>
+        <div class="error" id="error-message"></div>
+        <div class="section">
+            <label for="name">الاسم:</label>
+            <input type="text" id="name">
+        </div>
+        <div class="section">
+            <label for="id-number">الهوية:</label>
+            <input type="text" id="id-number">
+        </div>
+        <div class="section">
+            <label for="nationality">الجنسية:</label>
+            <input type="text" id="nationality">
+        </div>
+        <div class="section">
+            <label for="department">اسم الإدارة:</label>
+            <input type="text" id="department">
+        </div>
+        <button id="submit-card">إصدار البطاقة</button>
+    </div>
+
+    <!-- JavaScript code directly within the HTML -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('submit-card').addEventListener('click', function() {
+                const name = document.getElementById('name').value;
+                const idNumber = document.getElementById('id-number').value;
+                const nationality = document.getElementById('nationality').value;
+                const department = document.getElementById('department').value;
+                const errorMessage = document.getElementById('error-message');
+
+                if (!name || !idNumber || !nationality || !department) {
+                    errorMessage.textContent = 'جميع الحقول مطلوبة!';
+                } else {
+                    errorMessage.textContent = '';
+                    alert("تم إصدار البطاقة بنجاح!");
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام التقييم</title>
+    <link rel="stylesheet" href="evaluation.css"> <!-- ربط ملف CSS الخارجي -->
+</head>
+<body>
+    <div class="evaluation">
+        <h1>نظام التقييم</h1>
+        <div class="error" id="error-message"></div>
+        <div class="section">
+            <label>تقييم الكفاءة المهنية</label>
+            <input type="range" min="0" max="100" id="professional-skill">
+            <div id="professional-skill-percentage">50%</div>
+        </div>
+        <div class="section">
+            <label>تقييم الأداء اليومي</label>
+            <input type="text" id="daily-performance">
+        </div>
+        <div class="section">
+            <label>تقييم الالتزام بالمواعيد</label>
+            <input type="text" id="punctuality">
+        </div>
+        <div class="section">
+            <label>تقييم المتدرب للمشرف</label>
+            <input type="text" id="supervisor-feedback">
+        </div>
+        <button id="submit-evaluation">إرسال التقييم</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const professionalSkillInput = document.getElementById('professional-skill');
+            const professionalSkillPercentage = document.getElementById('professional-skill-percentage');
+
+            // تحديث النسبة عند تحريك الشريط
+            professionalSkillInput.addEventListener('input', function() {
+                professionalSkillPercentage.textContent = professionalSkillInput.value + '%';
+            });
+
+            // حدث عند الضغط على زر إرسال التقييم
+            document.getElementById('submit-evaluation').addEventListener('click', function() {
+                const dailyPerformance = document.getElementById('daily-performance').value;
+                const punctuality = document.getElementById('punctuality').value;
+                const supervisorFeedback = document.getElementById('supervisor-feedback').value;
+                const errorMessage = document.getElementById('error-message');
+
+                // التحقق من تعبئة جميع الحقول
+                if (!dailyPerformance || !punctuality || !supervisorFeedback) {
+                    errorMessage.textContent = 'جميع الحقول مطلوبة!';
+                } else {
+                    errorMessage.textContent = '';
+                    alert("تم إرسال التقييم بنجاح!");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

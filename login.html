@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول </title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: url('background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            width: 400px;
+            margin: 20px;
+            color: #fff;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 29px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        .toggle-button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-top: 10px;
+        }
+
+        .register-fields, .reset-password-fields {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="authForm" action="#">
+                <h2 id="form-title">تسجيل الدخول</h2>
+
+                <!-- حقول مشتركة للتسجيل وتسجيل الدخول -->
+                <div id="commonFields">
+                    <input type="text" placeholder="اسم المستخدم" required>
+                    <input type="password" placeholder="كلمة المرور" required>
+                </div>
+
+                <!-- حقول إضافية للتسجيل -->
+                <div class="register-fields" id="registerFields">
+                    <input type="password" placeholder="تأكيد كلمة المرور">
+                    <input type="email" placeholder="البريد الإلكتروني">
+                </div>
+
+                <!-- حقول إعادة تعيين كلمة المرور -->
+                <div class="reset-password-fields" id="resetPasswordFields">
+                    <input type="password" placeholder="كلمة المرور الجديدة" required>
+                    <input type="password" placeholder="إعادة كلمة المرور" required>
+                </div>
+
+                <!-- تسجيل الدخول أو إنشاء حساب -->
+                <label id="keepSignedInLabel">
+                    <input type="checkbox" checked> إبقني مسجلًا
+                </label>
+
+                <button type="submit" id="submitButton">تسجيل الدخول</button>
+
+                <!-- رابط نسيان كلمة المرور -->
+                <a href="#" id="forgotPasswordLink">نسيت كلمة المرور؟</a>
+
+                <!-- زر تبديل بين تسجيل الدخول والتسجيل -->
+                <button type="button" class="toggle-button" id="toggleFormButton">إنشاء حساب جديد</button>
+
+                <!-- زر العودة إلى تسجيل الدخول من إعادة تعيين كلمة المرور -->
+                <button type="button" class="toggle-button" id="backToLoginButton" style="display: none;">العودة إلى تسجيل الدخول</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const formTitle = document.getElementById("form-title");
+        const commonFields = document.getElementById("commonFields");
+        const registerFields = document.getElementById("registerFields");
+        const resetPasswordFields = document.getElementById("resetPasswordFields");
+        const submitButton = document.getElementById("submitButton");
+        const toggleFormButton = document.getElementById("toggleFormButton");
+        const forgotPasswordLink = document.getElementById("forgotPasswordLink");
+        const backToLoginButton = document.getElementById("backToLoginButton");
+        const keepSignedInLabel = document.getElementById("keepSignedInLabel");
+
+        toggleFormButton.addEventListener("click", () => {
+            if (registerFields.style.display === "none") {
+                // التحول إلى التسجيل
+                registerFields.style.display = "block";
+                resetPasswordFields.style.display = "none";
+                commonFields.style.display = "block";
+                formTitle.innerText = "إنشاء حساب جديد";
+                submitButton.innerText = "تسجيل";
+                toggleFormButton.innerText = "العودة إلى تسجيل الدخول";
+                keepSignedInLabel.style.display = "none";
+                forgotPasswordLink.style.display = "none";
+            } else {
+                // العودة إلى تسجيل الدخول
+                registerFields.style.display = "none";
+                commonFields.style.display = "block";
+                formTitle.innerText = "تسجيل الدخول";
+                submitButton.innerText = "تسجيل الدخول";
+                toggleFormButton.innerText = "إنشاء حساب جديد";
+                keepSignedInLabel.style.display = "block";
+                forgotPasswordLink.style.display = "block";
+            }
+        });
+
+        forgotPasswordLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            // التحول إلى إعادة تعيين كلمة المرور
+            resetPasswordFields.style.display = "block";
+            commonFields.style.display = "none";  // إخفاء حقول اسم المستخدم وكلمة المرور
+            registerFields.style.display = "none";
+            formTitle.innerText = "إعادة تعيين كلمة المرور";
+            submitButton.innerText = "إعادة تعيين";
+            toggleFormButton.style.display = "none";
+            keepSignedInLabel.style.display = "none";
+            forgotPasswordLink.style.display = "none";
+            backToLoginButton.style.display = "block";
+        });
+
+        backToLoginButton.addEventListener("click", () => {
+            // العودة إلى تسجيل الدخول
+            resetPasswordFields.style.display = "none";
+            commonFields.style.display = "block";
+            registerFields.style.display = "none";
+            formTitle.innerText = "تسجيل الدخول";
+            submitButton.innerText = "تسجيل الدخول";
+            toggleFormButton.style.display = "block";
+            keepSignedInLabel.style.display = "block";
+            forgotPasswordLink.style.display = "block";
+            backToLoginButton.style.display = "none";
+        });
+    </script>
+</body>
+</html>

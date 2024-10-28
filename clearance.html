@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج إخلاء الطرف</title>
+    <style>
+        body {
+            font-family: "DINNextLArabic", sans-serif;
+            direction: rtl;
+            text-align: right;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .container {
+            width: 60%;
+            margin: 20px auto;
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            background: #f2f2f2;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .red {
+            color: red;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"], input[type="date"], input[type="email"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .radio-group {
+            margin-bottom: 20px;
+        }
+
+        .radio-group label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .form-row div {
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .form-row div:first-child {
+            margin-left: 0;
+        }
+
+        .form-row div:last-child {
+            margin-right: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .signature-section {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .signature-box {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .signature-box div p {
+            margin-bottom: 60px;
+        }
+
+        .signature-box div {
+            width: 48%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function sendFormData(event) {
+            event.preventDefault(); // منع إعادة تحميل الصفحة
+
+            // جمع البيانات من النموذج
+            var date = document.getElementById('date').value;
+            var employee = document.getElementById('employee').value;
+            var iqama = document.getElementById('iqama').value;
+            var englishName = document.getElementById('englishName').value;
+            var arabicName = document.getElementById('arabicName').value;
+            var mobile = document.getElementById('mobile').value;
+            var jobTitle = document.getElementById('jobTitle').value;
+            var reason = document.getElementById('clearance-reason').value;
+            var admin = document.querySelector('input[name="admin"]:checked').value;
+            var housing = document.querySelector('input[name="housing"]:checked').value;
+
+            // التحقق من الحقول المطلوبة
+            if (!date || !employee || !iqama || !englishName || !arabicName || !mobile || !jobTitle || !reason || !admin || !housing) {
+                alert("يرجى تعبئة جميع الحقول");
+                return;
+            }
+
+            // تكوين الموضوع والجسم
+            var subject = 'نموذج إخلاء الطرف';
+            var body = `التاريخ: ${date}\nرقم المتدرب: ${employee}\nرقم الهوية: ${iqama}\nالاسم باللغة الإنجليزية: ${englishName}\nالاسم باللغة العربية: ${arabicName}\nرقم الجوال: ${mobile}\nالمسمى الوظيفي: ${jobTitle}\nسبب إخلاء الطرف: ${reason}\nالإدارة: ${admin}\nهل لديك سكن؟: ${housing}`;
+
+            // تكوين رابط mailto
+            var toEmails = "lliiqq388@gmail.com";
+            var mailtoLink = `mailto:${toEmails}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // فتح رابط mailto
+            window.location.href = mailtoLink;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>مدينة الملك فهد الطبية</h2>
+        <p class="red">إخلاء طرف متدرب</p>
+
+        <form>
+            <div class="form-row">
+                <div>
+                    <label for="date">التاريخ</label>
+                    <input type="date" id="date" name="date">
+                </div>
+            </div>
+
+            <label>اسم الإدارة</label>
+            <div class="radio-group">
+                <label><input type="radio" name="admin" value="إدارة التدريب الإداري"> إدارة التدريب الإداري</label>
+                <label><input type="radio" name="admin" value="إدارة التدريب الفني"> إدارة التدريب الفني</label>
+                <label><input type="radio" name="admin" value="إدارة التدريب الطبي"> إدارة التدريب الطبي</label>
+                <label><input type="radio" name="admin" value="إدارة التدريب الصحي"> إدارة التدريب الصحي</label>
+                <label><input type="radio" name="admin" value="إدارة تعليم التمريض"> إدارة تعليم التمريض</label>
+                <label><input type="radio" name="admin" value="إدارة المتطوعين"> إدارة المتطوعين</label>
+                <label><input type="radio" name="admin" value="إدارة التعاقدات"> إدارة التعاقدات/التوظيف الخارجي</label>
+                <label><input type="radio" name="admin" value="أكاديمية طب الأسرة"> أكاديمية طب الأسرة</label>
+                <label><input type="radio" name="admin" value="إدارة الأمن الصحي"> إدارة الأمن الصحي</label>
+                <label><input type="radio" name="admin" value="إدارة الأشعة"> إدارة الأشعة AAML</label>
+            </div>
+
+            <label for="employee">رقم المتدرب</label>
+            <input type="text" id="employee" name="employee">
+
+            <label>هل لديك سكن؟</label>
+            <div class="radio-group">
+                <label><input type="radio" name="housing" value="نعم"> نعم</label>
+                <label><input type="radio" name="housing" value="لا"> لا</label>
+            </div>
+
+            <label for="iqama">رقم الهوية</label>
+            <input type="text" id="iqama" name="iqama">
+
+            <label for="englishName">الاسم باللغة الإنجليزية</label>
+            <input type="text" id="englishName" name="englishName" placeholder="يرجى كتابة الاسم كما هو في الهوية الوطنية">
+
+            <label for="arabicName">الاسم باللغة العربية</label>
+            <input type="text" id="arabicName" name="arabicName" placeholder="يرجى كتابة الاسم الرباعي">
+
+            <label for="email">يرجى كتابة بريدك الإلكتروني الخاص بمدينة الملك فهد الطبية (إن وجد)</label>
+            <input type="email" id="email" name="email">
+
+            <label for="mobile">رقم الجوال</label>
+            <input type="text" id="mobile" name="mobile">
+
+            <label for="jobTitle">المسمى الوظيفي</label>
+            <input type="text" id="jobTitle" name="jobTitle">
+
+            <div class="form-group">
+                <label for="clearance-reason">سبب إخلاء الطرف:</label>
+                <br>
+                <textarea id="clearance-reason" rows="4" placeholder="أدخل سبب إخلاء الطرف" style="width:100%; height:108px;"></textarea>
+            </div>
+
+            <div class="input-box">
+                <input type="submit" class="submit" value="ارسال" style="width: 100%; font-size: 20px; background-color: #007bff7e; border-radius: 5px;" onclick="sendFormData(event)">
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+.evaluation {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    direction: rtl; 
+    text-align: right; 
+}
+
+.evaluation h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.section {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; 
+}
+
+input[type="text"], input[type="range"] {
+    padding: 8px;
+    width: 70%;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+}
+
+#professional-skill-percentage {
+    margin-top: 5px;
+    font-size: 14px;
+    text-align: right;
+    direction: ltr;
+    margin-right: 5px; 
+}
